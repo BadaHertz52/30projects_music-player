@@ -1,14 +1,14 @@
 import { MusicListType } from "./types";
-import summerWalkImg from "../images/summer_walk.jpg";
-import myUniverseImg from "../images/my_universe.jpg";
-import levaImg from "../images/leva.jpg";
-import unlockmeImg from "../images/unlockme.jpg";
-import waterfallImg from "../images/waterfall.jpg";
-import summerWalk from "../music/summer-walk.mp3";
-import myUniverse from "../music/my-universe.mp3";
-import leva from "../music/leva.mp3";
-import unlockme from "../music/unlock-me.mp3";
-import waterfall from "../music/waterfall.mp3";
+import summerWalkImg from "../assets/images/summer_walk.jpg";
+import myUniverseImg from "../assets/images/my_universe.jpg";
+import levaImg from "../assets/images/leva.jpg";
+import unlockmeImg from "../assets/images/unlockme.jpg";
+import waterfallImg from "../assets/images/waterfall.jpg";
+import summerWalk from "../assets/music/summer-walk.mp3";
+import myUniverse from "../assets/music/my-universe.mp3";
+import leva from "../assets/music/leva.mp3";
+import unlockme from "../assets/music/unlock-me.mp3";
+import waterfall from "../assets/music/waterfall.mp3";
 
 export const MusicList: MusicListType = [
   {
