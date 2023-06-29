@@ -1,4 +1,4 @@
-import { PlayListType } from "./types";
+import { MusicListType } from "./types";
 import summerWalkImg from "../images/summer_walk.jpg";
 import myUniverseImg from "../images/my_universe.jpg";
 import levaImg from "../images/leva.jpg";
@@ -10,7 +10,7 @@ import leva from "../music/leva.mp3";
 import unlockme from "../music/unlock-me.mp3";
 import waterfall from "../music/waterfall.mp3";
 
-export const playList: PlayListType = [
+export const MusicList: MusicListType = [
   {
     name: "Summer Walk",
     artist: "Olexy",
@@ -47,3 +47,5 @@ export const playList: PlayListType = [
     id: 5,
   },
 ];
+
+export default MusicList;

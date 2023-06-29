@@ -1,4 +1,4 @@
-export type PlayListItemType = {
+export type MusicListItemType = {
   name: string;
   artist: string;
   img: string;
@@ -9,12 +9,12 @@ export type PlayListItemType = {
   id: number;
 };
 
-export type PlayListType = PlayListItemType[];
+export type MusicListType = MusicListItemType[];
 
 export type RepeatType = "ONE" | "ALL" | "SHUFFLE";
 
 export type MusicPlayerState = {
-  playList: PlayListType;
+  playList: MusicListType;
   currentMusicId: number;
   currentIndex: number;
   playing: boolean;
