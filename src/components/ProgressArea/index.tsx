@@ -1,11 +1,10 @@
-import React from "react";
+import React, { RefObject } from "react";
 import styles from "./style.module.scss";
 
 type ProgressAreaProps = {
-  props;
-  ref;
+  ref: RefObject<HTMLAudioElement>;
 };
-function ProgressArea({ props, ref }: ProgressAreaProps) {
+function ProgressArea({ ref }: ProgressAreaProps) {
   return (
     <div className={styles.progressArea}>
       <div className={styles.progressBar}>

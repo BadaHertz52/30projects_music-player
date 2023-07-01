@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import RepeatIcon from "@mui/icons-material/Repeat";
 import RepeatOneIcon from "@mui/icons-material/RepeatOne";
 import PauseIcon from "@mui/icons-material/Pause";
@@ -11,20 +11,17 @@ import VolumeUpIcon from "@mui/icons-material/VolumeUp";
 import styles from "./style.module.scss";
 
 type ControlsProps = {
-  showMusicList;
-  setShowMusicList;
-  resetDuration;
-  play;
-  pause;
-  setVolume;
+  setShowPlayList: Dispatch<SetStateAction<boolean>>;
+  //resetDuration;
+  play: () => void;
+  pause: () => void;
+  changeVolume: (v: number) => void;
 };
 const Controls = ({
-  showMusicList,
-  setShowMusicList,
-  resetDuration,
+  setShowPlayList,
   play,
   pause,
-  setVolume,
+  changeVolume,
 }: ControlsProps) => {
   return (
     <div className={styles.controlArea}>

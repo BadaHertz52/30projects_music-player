@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import QueueMusic from "@mui/icons-material/QueueMusic";
 import Close from "@mui/icons-material/Close";
 import PlayListItem from "./PlayListItem";
@@ -8,11 +8,11 @@ import styles from "./style.module.scss";
 const cx = classNames.bind(styles);
 
 type PlayListProps = {
-  showMusicList;
-  setShowMusicList;
+  showPlayList: boolean;
+  setShowPlayList: Dispatch<SetStateAction<boolean>>;
 };
 
-const PlayList = ({ showMusicList, setShowMusicList }: PlayListProps) => {
+const PlayList = ({ showPlayList, setShowPlayList }: PlayListProps) => {
   return (
     <div className={cx("play-list")}>
       <div className={styles.header}>
