@@ -3,7 +3,7 @@ import QueueMusic from "@mui/icons-material/QueueMusic";
 import Close from "@mui/icons-material/Close";
 import PlayListItem from "./PlayListItem";
 import classNames from "classnames";
-import MusicList from "../../store/data";
+import { initialPlayList } from "../../store/data";
 import styles from "./style.module.scss";
 const cx = classNames.bind(styles);
 
@@ -23,7 +23,7 @@ const PlayList = ({ showPlayList, setShowPlayList }: PlayListProps) => {
         <Close sx={{ fontSize: 22, cursor: "pointer" }} />
       </div>
       <ul>
-        {MusicList.map((item, index) => (
+        {initialPlayList.map((item, index) => (
           <li key={index}>
             <PlayListItem item={item} index={index} />
           </li>

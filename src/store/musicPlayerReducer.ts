@@ -1,13 +1,14 @@
-import { createStandardAction } from "typesafe-actions/dist/deprecated/create-standard-action";
 import {
   createReducer,
   ActionType,
   createCustomAction,
+  deprecated,
 } from "typesafe-actions";
 
 import { initialPlayList } from "./data";
 import { MusicListType, MusicPlayerState, RepeatType } from "./types";
 
+const { createStandardAction } = deprecated;
 const initialState: MusicPlayerState = {
   playList: initialPlayList,
   currentMusicId: initialPlayList[0].id,
