@@ -10,7 +10,7 @@ import leva from "../assets/music/leva.mp3";
 import unlockme from "../assets/music/unlock-me.mp3";
 import waterfall from "../assets/music/waterfall.mp3";
 
-export const MusicList: MusicListType = [
+export const initialPlayList: MusicListType = [
   {
     name: "Summer Walk",
     artist: "Olexy",
@@ -47,5 +47,3 @@ export const MusicList: MusicListType = [
     id: 5,
   },
 ];
-
-export default MusicList;
