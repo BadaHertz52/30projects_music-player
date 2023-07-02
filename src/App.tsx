@@ -2,7 +2,7 @@ import React, { useCallback, useState, useRef } from "react";
 import SongDetail from "./components/SongDetail";
 import Controls from "./components/Controls";
 import ProgressArea from "./components/ProgressArea";
-import styles from "./App.module.scss";
+import styles from "./assets/styles/App.module.scss";
 import PlayList from "./components/PlayList";
 const App = () => {
   const audioRef = useRef<HTMLAudioElement>(null);

@@ -4,6 +4,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { legacy_createStore as createStore } from "redux";
 import "../src/assets/styles/reset.scss";
+import "../src/assets/styles/index.scss";
 import { Provider } from "react-redux";
 import musicPlayerReducer from "./store/musicPlayerReducer";
 
