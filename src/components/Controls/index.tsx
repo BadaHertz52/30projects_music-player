@@ -13,7 +13,7 @@ import QueueMusic from "@mui/icons-material/QueueMusic";
 
 import VolumeUpIcon from "@mui/icons-material/VolumeUp";
 import styles from "./style.module.scss";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector, useDispatch, shallowEqual } from "react-redux";
 import { MusicPlayerState } from "../../store/types";
 import {
   nextMusic,
@@ -28,15 +28,18 @@ type ControlsProps = {
   play: () => void;
   pause: () => void;
   changeVolume: (v: number) => void;
+  resetDuration: () => void;
 };
 const Controls = ({
   setShowPlayList,
   play,
   pause,
   changeVolume,
+  resetDuration,
 }: ControlsProps) => {
   const { playing, repeat, currentIndex } = useSelector(
-    (state: MusicPlayerState) => state
+    (state: MusicPlayerState) => state,
+    shallowEqual
   );
   const dispatch = useDispatch();
 
@@ -56,11 +59,11 @@ const Controls = ({
     [changeVolume]
   );
   const onClickPrevious = useCallback(() => {
-    dispatch(prevMusic());
+    repeat === "ONE" ? resetDuration() : dispatch(prevMusic());
   }, [dispatch]);
 
   const onClickNext = useCallback(() => {
-    dispatch(nextMusic());
+    repeat === "ONE" ? resetDuration() : dispatch(nextMusic());
   }, [dispatch]);
 
   const onClickRepeat = useCallback(() => {
