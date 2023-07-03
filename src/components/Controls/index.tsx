@@ -37,8 +37,11 @@ const Controls = ({
   changeVolume,
   resetDuration,
 }: ControlsProps) => {
-  const { playing, repeat, currentIndex } = useSelector(
-    (state: MusicPlayerState) => state,
+  const { playing, repeat } = useSelector(
+    (state: MusicPlayerState) => ({
+      playing: state.playing,
+      repeat: state.repeat,
+    }),
     shallowEqual
   );
   const dispatch = useDispatch();

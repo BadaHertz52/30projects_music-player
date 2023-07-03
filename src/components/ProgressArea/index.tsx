@@ -27,8 +27,12 @@ const ProgressArea = forwardRef<AudioPlayerHandle>((_, ref) => {
   const audioRef = useRef<HTMLAudioElement>(null);
   const progressBarRef = useRef<HTMLDivElement>(null);
   const dispatch = useDispatch();
-  const { playList, currentIndex, repeat } = useSelector(
-    (state: MusicPlayerState) => state,
+  const { playList, repeat, currentIndex } = useSelector(
+    (state: MusicPlayerState) => ({
+      playList: state.playList,
+      repeat: state.repeat,
+      currentIndex: state.currentIndex,
+    }),
     shallowEqual
   );
   const [currentTime, setCurrentTime] = useState<string>("00:00");
