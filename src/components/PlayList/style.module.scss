@@ -1,6 +1,6 @@
 @import "../../assets/styles/variable.scss";
 
-.play-list {
+.playList {
   position: absolute;
   background: $white;
   width: 100%;
@@ -12,12 +12,6 @@
   border-radius: 15px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   transition: all 0.15s ease-out;
-
-  &.show {
-    bottom: 0;
-    opacity: 1;
-    pointer-events: auto;
-  }
 
   ul {
     margin: 10px 0;
@@ -49,19 +43,21 @@
           opacity: 0.9;
         }
       }
-
-      .music-duration {
-        font-size: 16px;
-      }
-
-      .row.playing,
-      .music-duration.playing {
-        color: $green;
-      }
     }
   }
 }
+.playListShow {
+  bottom: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+.musicDuration {
+  font-size: 16px;
+}
 
+.playing {
+  color: $green;
+}
 .header,
 ul li {
   display: flex;
@@ -73,7 +69,6 @@ ul li {
   display: flex;
   align-items: center;
   font-size: 19px;
-
   span {
     margin-left: 5px;
   }
