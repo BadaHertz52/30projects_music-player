@@ -2,9 +2,7 @@
   "compilerOptions": {
     "target": "es2022",
     "lib": ["dom", "dom.iterable", "esnext"],
-    "typeRoots": ["./types ", "./types/@badahertz52", "./node_modules/@types"],
-    "declaration": true,
-    "declarationDir": "./types",
+    "typeRoots": ["./types ", "./node_modules/@types"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
