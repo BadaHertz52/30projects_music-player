@@ -43,7 +43,7 @@ function PlayListItem({ item, index }: PlayListItemProps) {
         })}
       >
         <span aria-description="song name">{item.name}</span>
-        <p aria-description="artist">{item.artist}</p>
+        <span aria-description="artist">- {item.artist}</span>
       </div>
       <span
         className={classNames(styles.musicDuration, {
