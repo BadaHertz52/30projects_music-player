@@ -10,3 +10,16 @@
   border: 2px solid $black;
   background: $white;
 }
+
+@media screen and (max-width: 500px) {
+  .container {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 375px) {
+  .container {
+    padding: 20px;
+    min-width: 290px;
+  }
+}

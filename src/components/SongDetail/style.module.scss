@@ -30,3 +30,16 @@
   font-size: 19px;
   line-height: 30px;
 }
+
+@media screen and (max-width: 500px) {
+  .imgArea {
+    height: auto;
+    aspect-ratio: 1/1;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .song {
+    font-size: 18px;
+  }
+}

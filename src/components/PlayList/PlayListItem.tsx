@@ -41,17 +41,17 @@ function PlayListItem({ item, index }: PlayListItemProps) {
         className={classNames(styles.row, {
           [styles.playing]: currentIndex === index,
         })}
+        aria-description="song name- artist"
       >
-        <span aria-description="song name">{item.name}</span>
-        <span aria-description="artist">- {item.artist}</span>
+        {item.name} - {item.artist}
       </div>
-      <span
+      <div
         className={classNames(styles.musicDuration, {
           [styles.playing]: currentIndex === index,
         })}
       >
         {duration}
-      </span>
+      </div>
     </>
   );
 }

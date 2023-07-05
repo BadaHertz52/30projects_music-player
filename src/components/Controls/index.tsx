@@ -4,6 +4,7 @@ import {
   useCallback,
   ChangeEvent,
   memo,
+  useState,
 } from "react";
 
 import PauseIcon from "@mui/icons-material/Pause";
@@ -45,8 +46,23 @@ const Controls = ({
     shallowEqual
   );
   const dispatch = useDispatch();
+  type SXType = {
+    fontSize: number;
+    cursor: string;
+  };
+  const initialSX: SXType = { fontSize: 30, cursor: "pointer" };
 
-  const sx = { fontSize: 30, cursor: "pointer" };
+  const [sx, setSX] = useState<SXType>(initialSX);
+
+  window.onresize = () => {
+    setSX((prev) => {
+      const fontSize = window.innerWidth > 375 ? 30 : 24;
+      return {
+        ...prev,
+        fontSize: fontSize,
+      };
+    });
+  };
   const onClickPlay = useCallback(() => {
     play();
   }, [play]);
