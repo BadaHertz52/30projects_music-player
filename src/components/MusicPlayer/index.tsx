@@ -1,4 +1,4 @@
-import React, { useCallback, useState, useRef } from "react";
+import { useCallback, useState, useRef, memo } from "react";
 import { AudioPlayerHandle } from "../ProgressArea";
 import { Controls, PlayList, ProgressArea, SongDetail } from "../index";
 import styles from "./style.module.scss";
@@ -40,4 +40,4 @@ const MusicPlayer = () => {
   );
 };
 
-export default MusicPlayer;
+export default memo(MusicPlayer);

@@ -1,10 +1,11 @@
-import React, {
+import {
   Dispatch,
   SetStateAction,
   useCallback,
   ChangeEvent,
+  memo,
 } from "react";
-import RepeatIcon from "@mui/icons-material/Repeat";
+
 import PauseIcon from "@mui/icons-material/Pause";
 import SkipPrevious from "@mui/icons-material/SkipPrevious";
 import PlayArrow from "@mui/icons-material/PlayArrow";
@@ -24,7 +25,6 @@ import RepeatBtn from "../RepeatBtn";
 
 type ControlsProps = {
   setShowPlayList: Dispatch<SetStateAction<boolean>>;
-  //resetDuration;
   play: () => void;
   pause: () => void;
   changeVolume: (v: number) => void;
@@ -63,11 +63,11 @@ const Controls = ({
   );
   const onClickPrevious = useCallback(() => {
     repeat === "ONE" ? resetDuration() : dispatch(prevMusic());
-  }, [dispatch]);
+  }, [dispatch, resetDuration, repeat]);
 
   const onClickNext = useCallback(() => {
     repeat === "ONE" ? resetDuration() : dispatch(nextMusic());
-  }, [dispatch]);
+  }, [dispatch, repeat, resetDuration]);
 
   const onClickRepeat = useCallback(() => {
     dispatch(setRepeat());
@@ -75,7 +75,7 @@ const Controls = ({
 
   const onClickShowPlayList = useCallback(() => {
     setShowPlayList(true);
-  }, []);
+  }, [setShowPlayList]);
 
   return (
     <div className={styles.controlArea}>
@@ -104,4 +104,4 @@ const Controls = ({
   );
 };
 
-export default Controls;
+export default memo(Controls);

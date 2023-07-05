@@ -6,6 +6,7 @@ import React, {
   useCallback,
   MouseEvent,
   SyntheticEvent,
+  memo,
 } from "react";
 import styles from "./style.module.scss";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
@@ -35,8 +36,10 @@ const ProgressArea = forwardRef<AudioPlayerHandle>((_, ref) => {
     }),
     shallowEqual
   );
+  // currentTime, duration의 value 는 audio event target을 통해서 가져옴
   const [currentTime, setCurrentTime] = useState<string>("00:00");
   const [duration, setDuration] = useState<string>("00:00");
+  // ref로 지정한 element에 대해 부모 노드가 다룰 수 있는 event 지정
   useImperativeHandle(
     ref,
     () => ({
@@ -71,29 +74,33 @@ const ProgressArea = forwardRef<AudioPlayerHandle>((_, ref) => {
       seconds.length >= 2 ? seconds : 0 + seconds
     }`;
   }, []);
+  /**
+   *  유저가 progress를 클릭해 변경시킬때, 변경된 progress 위치에 맞추어  오디오의 currentTime을 변경함
+   */
   const onClickProgress = useCallback((event: MouseEvent<HTMLElement>) => {
     const progressAreaWidth = event.currentTarget.clientWidth;
     const { offsetX } = event.nativeEvent;
 
     if (audioRef.current) {
-      const duration = audioRef.current.duration;
-      audioRef.current.currentTime = (offsetX / progressAreaWidth) * duration;
+      const targetDuration = audioRef.current.duration;
+      audioRef.current.currentTime =
+        (offsetX / progressAreaWidth) * targetDuration;
     }
   }, []);
-
+  /**
+   * audio의 timeUpdate 이벤트가 발생했을 경우(ex: 다른 노래로 변경되거나 progress 이동),  변경된 시간에 맞추어 progress bar의 너비, currentTime 상태와 duration 상태를 변경함
+   */
   const onTimeUpdate = useCallback(
     (event: SyntheticEvent<HTMLAudioElement>) => {
       const target = event.target as HTMLAudioElement;
       if (target.readyState === 0) return;
-
-      const { currentTime, duration } = target;
       // progressBar 의 width는 progressArea의 %
-      const progressBarWidth = (currentTime / duration) * 100;
+      const progressBarWidth = (target.currentTime / target.duration) * 100;
       if (progressBarRef.current) {
         progressBarRef.current.style.width = `${progressBarWidth}%`;
       }
-      setCurrentTime(getTime(currentTime));
-      setDuration(getTime(duration));
+      setCurrentTime(getTime(target.currentTime));
+      setDuration(getTime(target.duration));
     },
     [getTime]
   );
@@ -123,11 +130,11 @@ const ProgressArea = forwardRef<AudioPlayerHandle>((_, ref) => {
         ></audio>
       </div>
       <div className={styles.musicTimer}>
-        <span aria-description="current time">{currentTime}</span>
-        <span aria-description="duration">{duration}</span>
+        <span aria-description="audio current time">{currentTime}</span>
+        <span aria-description="audio duration">{duration}</span>
       </div>
     </div>
   );
 });
 
-export default ProgressArea;
+export default memo(ProgressArea);

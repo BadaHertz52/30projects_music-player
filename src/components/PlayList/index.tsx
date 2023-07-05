@@ -1,9 +1,8 @@
-import React, { Dispatch, SetStateAction, useCallback } from "react";
+import { Dispatch, SetStateAction, useCallback, memo } from "react";
 import QueueMusic from "@mui/icons-material/QueueMusic";
 import Close from "@mui/icons-material/Close";
 import PlayListItem from "./PlayListItem";
 import styles from "./style.module.scss";
-import { initialPlayList } from "../../store/data";
 import { useSelector, useDispatch } from "react-redux";
 import {
   MusicListItemType,
@@ -25,23 +24,33 @@ type PlayListProps = {
 const PlayList = ({ showPlayList, setShowPlayList }: PlayListProps) => {
   const playList = useSelector((state: MusicPlayerState) => state.playList);
   const dispatch = useDispatch();
+  /**
+   * playlist 창 닫음
+   */
   const onClickClosePlayList = useCallback(() => {
     setShowPlayList(false);
   }, [setShowPlayList]);
+  /**
+   * 선택한 음악으로 재생
+   */
   const onClickItem = useCallback(
     (index: number) => {
       dispatch(setCurrentIndex(index));
     },
     [dispatch]
   );
-
+  /**
+   * 플레이리스트 재정렬시, 재정렬된 플레이리스트를  root 상태에 반영
+   */
   const updateData = useCallback(
     (newPlayList: MusicListType) => {
       dispatch(updatePlayList(newPlayList));
     },
     [dispatch]
   );
-
+  /**
+   * PlayListItem을 render
+   */
   const renderItem = useCallback(
     (item: MusicListItemType, index: number) => (
       <PlayListItem item={item} index={index} />
@@ -75,4 +84,4 @@ const PlayList = ({ showPlayList, setShowPlayList }: PlayListProps) => {
   );
 };
 
-export default PlayList;
+export default memo(PlayList);
