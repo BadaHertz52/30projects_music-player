@@ -1,3 +1,4 @@
+@import "../../assets//styles/variable.scss";
 .playIcon {
   height: 18px;
   display: flex;
@@ -28,40 +29,49 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: black;
+  background-color: $orange;
 }
 
 @keyframes moveBar1 {
   0% {
     height: 50%;
+    opacity: 0.5;
   }
   60% {
     height: 100%;
+    opacity: 1;
   }
   100% {
     height: 50%;
+    opacity: 0.5;
   }
 }
 @keyframes moveBar2 {
   0% {
     height: 100%;
+    opacity: 1;
   }
   50% {
     height: 40%;
+    opacity: 0.5;
   }
   100% {
     height: 100%;
+    opacity: 1;
   }
 }
 @keyframes moveBar3 {
   0% {
     height: 70%;
+    opacity: 0.5;
   }
   30% {
     height: 100%;
+    opacity: 1;
   }
   100% {
     height: 70%;
+    opacity: 0.5;
   }
 }
 .playIconOn {
