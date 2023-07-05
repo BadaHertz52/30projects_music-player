@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./style.module.scss";
 import { shallowEqual, useSelector } from "react-redux";
 import { MusicPlayerState } from "../../store/types";
+import { PlayIcon } from "../../components";
 const SongDetail = () => {
   const { playing, playList, currentIndex } = useSelector(
     (state: MusicPlayerState) => ({
@@ -15,7 +16,7 @@ const SongDetail = () => {
   return (
     <>
       <div className={styles.header}>
-        <span>{playing ? "재생 중" : "Not Playing"}</span>
+        <PlayIcon playing={playing} />
       </div>
       <div className={styles.imgArea} aria-description="music cover image">
         <img
