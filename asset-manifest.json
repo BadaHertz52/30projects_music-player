@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/30projects_music-player/static/css/main.4912a91a.css",
+    "main.js": "/30projects_music-player/static/js/main.26c3df9a.js",
+    "static/js/787.ded37e57.chunk.js": "/30projects_music-player/static/js/787.ded37e57.chunk.js",
+    "static/media/summer-walk.mp3": "/30projects_music-player/static/media/summer-walk.4f76be0528e76dffb67a.mp3",
+    "static/media/unlock-me.mp3": "/30projects_music-player/static/media/unlock-me.3b39d022e3d4ea70e5a4.mp3",
+    "static/media/waterfall.mp3": "/30projects_music-player/static/media/waterfall.186cde88759fa8dea7eb.mp3",
+    "static/media/my-universe.mp3": "/30projects_music-player/static/media/my-universe.aa48483e4d3a9b99a4f6.mp3",
+    "static/media/leva.mp3": "/30projects_music-player/static/media/leva.ac0531accd6dcdb058f6.mp3",
+    "static/media/unlockme.jpg": "/30projects_music-player/static/media/unlockme.909adf2b10c9c5094502.jpg",
+    "static/media/summer_walk.jpg": "/30projects_music-player/static/media/summer_walk.4e7ee78fe64d8b579796.jpg",
+    "static/media/waterfall.jpg": "/30projects_music-player/static/media/waterfall.9ec0ad7b752291dfba6e.jpg",
+    "static/media/my_universe.jpg": "/30projects_music-player/static/media/my_universe.b769eba8b486833cd881.jpg",
+    "static/media/leva.jpg": "/30projects_music-player/static/media/leva.78da44bed77ee89bec15.jpg",
+    "index.html": "/30projects_music-player/index.html",
+    "main.4912a91a.css.map": "/30projects_music-player/static/css/main.4912a91a.css.map",
+    "main.26c3df9a.js.map": "/30projects_music-player/static/js/main.26c3df9a.js.map",
+    "787.ded37e57.chunk.js.map": "/30projects_music-player/static/js/787.ded37e57.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4912a91a.css",
+    "static/js/main.26c3df9a.js"
+  ]
+}
