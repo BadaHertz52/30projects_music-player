@@ -1,6 +1,6 @@
 # music player (width react)
 
-#### [🎚️ 프로젝트 사이트 바로가기]("https://badahertz52.github.io/30projects_music-player")
+#### [🎚️ 프로젝트 사이트 바로가기](https://badahertz52.github.io/30projects_music-player)
 
 ## Index
 
