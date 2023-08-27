@@ -14,7 +14,7 @@ import {
   updatePlayList,
 } from "../../store/musicPlayerReducer";
 import classNames from "classnames";
-import { SortableList } from "@badahertz52/sortable-list-tsc";
+import SortableList from "@badahertz52/sortable-list-tsc/dist/SortableList";
 
 type PlayListProps = {
   showPlayList: boolean;
